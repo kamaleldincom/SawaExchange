@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.light
       ),
+      debugShowCheckedModeBanner: false,
       home: Dashboard(),
       routes: {
         '/dashboord': (context) => Dashboard(),
