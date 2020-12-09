@@ -8,7 +8,6 @@ import 'screens/dashboard.dart';
 
 void main() => runApp(MyApp());
 
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -16,17 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        primarySwatch: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        brightness: Brightness.light
-      ),
+          primarySwatch: Colors.grey,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          brightness: Brightness.light),
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
+      home: Login(),
       routes: {
         '/dashboord': (context) => Dashboard(),
         '/login': (context) => Login(),
-        '/profile':(context) => Profile(),
+        '/profile': (context) => Profile(),
         '/newpost': (context) => NewPost(),
       },
     );
