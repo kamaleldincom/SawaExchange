@@ -4,6 +4,8 @@ import 'package:sawa_exchange/screens/dashboard.dart';
 import 'package:sawa_exchange/screens/login.dart';
 import 'package:sawa_exchange/screens/newpost.dart';
 
+import 'screens/dashboard.dart';
+
 void main() => runApp(MyApp());
 
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.light
       ),
