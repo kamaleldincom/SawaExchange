@@ -12,7 +12,8 @@ class _DashboardState extends State<Dashboard> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Center(
+        title: 
+        Center(
           child: Text(
             
             "Sawa Exchange",
@@ -20,6 +21,7 @@ class _DashboardState extends State<Dashboard> {
               color: Color(0xFF707070),
             ),
           ),
+
         ),
 
         leading: Container(
