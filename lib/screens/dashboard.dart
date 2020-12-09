@@ -12,17 +12,21 @@ class _DashboardState extends State<Dashboard> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: 
-        Center(
-          child: Text(
-            
-            "Sawa Exchange",
-            style: TextStyle(
-              color: Color(0xFF707070),
-            ),
-          ),
-
+        title: Center(
+          child: Image.asset(
+            "assets/Logo.png", fit: BoxFit.contain,
+          )
         ),
+        // Center(
+        //   child: Text(
+            
+        //     "Sawa Exchange",
+        //     style: TextStyle(
+        //       color: Color(0xFF707070),
+        //     ),
+        //   ),
+
+        // ),
 
         leading: Container(
           padding: EdgeInsets.all(8),
@@ -35,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
               );
             },
               child: CircleAvatar(
-              backgroundColor: Color(0xFF707070),
+              backgroundColor: Colors.black,
               child: Text("AK"),
               // radius: 10.0,
             ),
@@ -52,7 +56,7 @@ class _DashboardState extends State<Dashboard> {
               );
             },
               child: CircleAvatar(
-                backgroundColor: Color(0xFF707070),
+                backgroundColor: Colors.black,
                 child: IconButton(
                   icon: Icon(Icons.add, color: Colors.white,), 
                 ),
