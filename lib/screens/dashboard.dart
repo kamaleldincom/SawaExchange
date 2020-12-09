@@ -76,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 150,
+                width: 100,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +109,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
               Container(
-                width: 150,
+                width: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

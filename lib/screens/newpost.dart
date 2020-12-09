@@ -36,7 +36,7 @@ class _NewPostState extends State<NewPost> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 150,
+                width: 100,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +69,7 @@ class _NewPostState extends State<NewPost> {
                 ),
               ),
               Container(
-                width: 150,
+                width: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
