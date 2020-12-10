@@ -3,6 +3,7 @@ import 'package:sawa_exchange/screens/Profile.dart';
 import 'package:sawa_exchange/screens/dashboard.dart';
 import 'package:sawa_exchange/screens/login.dart';
 import 'package:sawa_exchange/screens/newpost.dart';
+import 'package:sawa_exchange/screens/onboarding_screen.dart';
 
 import 'screens/dashboard.dart';
 
@@ -19,12 +20,13 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           brightness: Brightness.light),
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
+      home: OnboardingScreen(),
       routes: {
         '/dashboord': (context) => Dashboard(),
         '/login': (context) => Login(),
         '/profile': (context) => Profile(),
         '/newpost': (context) => NewPost(),
+        '/onboarding': (context) => OnboardingScreen(),
       },
     );
   }
