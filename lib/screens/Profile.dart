@@ -19,6 +19,127 @@ class _ProfileState extends State<Profile> {
             color: Color(0xFF707070),
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: (){
+              showModalBottomSheet(
+                context: context, 
+                builder: (BuildContext bc){
+                  return Container(
+                    height: MediaQuery.of(context).size.height/5,
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Text(
+                            "Settings",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            )
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            height: 45,
+                            child: RaisedButton(
+                              onPressed: (){
+                                showModalBottomSheet(
+                                  context: context, 
+                                  // isScrollControlled: true,
+                                  builder: (BuildContext bc){
+                                    return Container(
+                                      // height: MediaQuery.of(context).size.height/2,
+                                      child: Column(
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.only(top: 15.0),
+                                            child: Text(
+                                              "Terms & Conditions",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                              )
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                                            child: Expanded(
+                                              child: Text("These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns.These Guidelines clarify the ways you can and cannot use the WhatsApp Brand Resources for marketing and other purposes. These Guidelines also contain legal disclosures and a general set of questions and answers that address common inquiries and concerns."),
+                                            ),
+                                          )
+                                        ]
+                                      ),
+                                    );
+                                  }
+                                );
+                              },
+                              color: Colors.white,
+                              textColor: Colors.blueAccent,
+                              child: Text(
+                                "Terms & Conditions",
+                                style: TextStyle(
+                                  // color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                )
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(15.0),
+                                side: BorderSide(color: Colors.blueAccent),
+                              )
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            height: 45,
+                            child: RaisedButton(
+                              onPressed: (){
+                                Navigator.of(context).pushNamedAndRemoveUntil(
+                                  // context, 
+                                  '/login',
+                                  (Route<dynamic> route) => false
+                                  // arguments: widget.usertype
+                                );
+                              },
+                              color: Colors.redAccent,
+                              textColor: Colors.white,
+                              child: Text(
+                                "Log Out",
+                                style: TextStyle(
+                                  // color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                )
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(15.0),
+                                // side: BorderSide(color: Colors.black),
+                              )
+                            ),
+                          ),
+                        ),
+              
+                      ]
+                    ),
+                  );
+                }
+              );
+              
+            },
+            icon: Icon(
+              Icons.settings, 
+              // color: Colors.white,
+            ), 
+          )
+        ],
       ),
       body: Column(
         children: <Widget>[
@@ -381,6 +502,56 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 SizedBox(width: 5),
                                 GestureDetector(
+                                  onTap: (){
+                                    showModalBottomSheet(
+                                      context: context, 
+                                      builder: (BuildContext bc){
+                                        return Container(
+                                          height: MediaQuery.of(context).size.height/5,
+                                          child: Column(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding: const EdgeInsets.only(top: 15.0),
+                                                child: Text(
+                                                  "Post Actions",
+                                                  style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                  )
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                                                child: SizedBox(
+                                                  width: MediaQuery.of(context).size.width,
+                                                  height: 45,
+                                                  child: RaisedButton(
+                                                    onPressed: (){},
+                                                    color: Colors.redAccent,
+                                                    textColor: Colors.white,
+                                                    child: Text(
+                                                      "Delete Post",
+                                                      style: TextStyle(
+                                                        // color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontWeight: FontWeight.w600,
+                                                      )
+                                                    ),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius: new BorderRadius.circular(15.0),
+                                                      // side: BorderSide(color: Colors.black),
+                                                    )
+                                                  ),
+                                                ),
+                                              ),
+
+                                            ]
+                                          ),
+                                        );
+                                      }
+                                    );
+                                  },
                                   child: Container(
                                     // width: 40,
                                     height: 30,

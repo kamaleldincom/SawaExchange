@@ -6,6 +6,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  String currencyValue = 'US Dollars';
+  String amountValue = 'All amounts';
+  String payIn = 'Malaysia';
+  String collectFrom = 'Sudan';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +87,7 @@ class _DashboardState extends State<Dashboard> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 100,
+                width: 120,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,12 +100,29 @@ class _DashboardState extends State<Dashboard> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
-                    "Malaysia",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 19,
-                      fontWeight: FontWeight.w700,
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isDense: true,
+                      // itemHeight: 48,
+                      value: payIn,
+                      icon: Icon(Icons.arrow_drop_down),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      items: <String>['Sudan', 'Malaysia', 'Yemen']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String newPayInLocation) {
+                        setState(() {
+                          payIn = newPayInLocation;
+                        });
+                      },
                     ),
                   ),
                 ],
@@ -116,7 +137,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
               Container(
-                width: 100,
+                width: 120,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -128,14 +149,39 @@ class _DashboardState extends State<Dashboard> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
-                    "Sudan",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 19,
-                      fontWeight: FontWeight.w700,
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isDense: true,
+                      // itemHeight: 48,
+                      value: collectFrom,
+                      icon: Icon(Icons.arrow_drop_down),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      items: <String>['Sudan', 'Malaysia', 'Yemen']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String newColLocation) {
+                        setState(() {
+                          collectFrom = newColLocation;
+                        });
+                      },
                     ),
                   ),
+                  // Text(
+                  //   "Sudan",
+                  //   style: TextStyle(
+                  //     color: Colors.black,
+                  //     fontSize: 19,
+                  //     fontWeight: FontWeight.w700,
+                  //   ),
+                  // ),
                 ],
                 ),
               ),
@@ -159,9 +205,6 @@ class _DashboardState extends State<Dashboard> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(50)),
-                          // border: Border.all(
-                          //   width: 0.5,
-                          // ),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey[200],
@@ -171,23 +214,25 @@ class _DashboardState extends State<Dashboard> {
                           ],
                         ),
 
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Currency",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                              )
-                            ),
-                            Icon(
-                              Icons.arrow_drop_down,
-                              color: Colors.grey,
-                            ),
-                          ],
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            value: currencyValue,
+                            icon: Icon(Icons.arrow_drop_down),
+                            style: TextStyle(color: Colors.grey),
+                            items: <String>['US Dollars', 'Sudan Pounds', 'M\'asian Ringgits', 'Yemeni Rials']
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (String newCurrency) {
+                              setState(() {
+                                currencyValue = newCurrency;
+                              });
+                            },
+
+                          ),
                         ),
                       )
                     ),
@@ -200,9 +245,6 @@ class _DashboardState extends State<Dashboard> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(50)),
-                          // border: Border.all(
-                          //   width: 0.5,
-                          // ),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey[200],
@@ -212,23 +254,25 @@ class _DashboardState extends State<Dashboard> {
                           ],
                         ),
 
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Amount",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                              )
-                            ),
-                            Icon(
-                              Icons.arrow_drop_down,
-                              color: Colors.grey,
-                            ),
-                          ],
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            value: amountValue,
+                            icon: Icon(Icons.arrow_drop_down),
+                            style: TextStyle(color: Colors.grey),
+                            items: <String>['All amounts', '< 500', '500 - 1000', '> 1000']
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (String newAmount) {
+                              setState(() {
+                                amountValue = newAmount;
+                              });
+                            },
+
+                          ),
                         ),
                       )
                     ),
@@ -440,6 +484,91 @@ class _DashboardState extends State<Dashboard> {
                               ],
                             ),
                             GestureDetector(
+                              onTap: (){
+                                showModalBottomSheet(
+                                  context: context, 
+                                  builder: (BuildContext bc){
+                                    return Container(
+                                      height: MediaQuery.of(context).size.height/4,
+                                      // decoration: BoxDecoration(
+                                      //   color: Colors.white,
+                                      //   borderRadius: BorderRadius.all(Radius.circular(15)),
+                                      //   boxShadow: [
+                                      //     BoxShadow(
+                                      //       color: Colors.grey[200],
+                                      //       offset: Offset(0.0, 1.0), //(x,y)
+                                      //       blurRadius: 3.0,
+                                      //     ),
+                                      //   ],
+                                      // ),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.only(top: 15.0),
+                                            child: Text(
+                                              "Contact Basil Omar",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                              )
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                                            child: SizedBox(
+                                              width: MediaQuery.of(context).size.width,
+                                              height: 45,
+                                              child: RaisedButton(
+                                                onPressed: (){},
+                                                color: Colors.black,
+                                                textColor: Colors.white,
+                                                child: Text(
+                                                  "Call mobile number",
+                                                  style: TextStyle(
+                                                    // color: Colors.white,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w600,
+                                                  )
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: new BorderRadius.circular(15.0),
+                                                  // side: BorderSide(color: Colors.black),
+                                                )
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                                            child: SizedBox(
+                                              width: MediaQuery.of(context).size.width,
+                                              height: 45,
+                                              child: RaisedButton(
+                                                onPressed: (){},
+                                                color: Color(0xFF25D366),
+                                                textColor: Colors.white,
+                                                child: Text(
+                                                  "Contact on WhatsApp",
+                                                  style: TextStyle(
+                                                    // color: Colors.white,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w600,
+                                                  )
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: new BorderRadius.circular(15.0),
+                                                  // side: BorderSide(color: Colors.black),
+                                                )
+                                              ),
+                                            ),
+                                          )
+
+                                        ]
+                                      ),
+                                    );
+                                  }
+                                );
+                              },
                               child: Container(
                                 // width: 110,
                                 height: 30,

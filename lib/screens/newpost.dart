@@ -127,7 +127,7 @@ class _NewPostState extends State<NewPost> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "US dollar",
+                          "US Dollars",
                           style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 15,

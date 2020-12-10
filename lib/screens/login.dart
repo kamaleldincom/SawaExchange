@@ -24,11 +24,10 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text(
-          "Sawa Exchange",
-          style: TextStyle(
-            color: Color(0xFF707070),
-          ),
+        title: Center(
+          child: Image.asset(
+            "assets/Logo.png", fit: BoxFit.contain,
+          )
         ),
       ),
       body: SingleChildScrollView(
