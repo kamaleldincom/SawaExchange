@@ -6,6 +6,8 @@ class NewPost extends StatefulWidget {
 }
 
 class _NewPostState extends State<NewPost> {
+  String payIn = 'Malaysia';
+  String collectFrom = 'Sudan';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +39,7 @@ class _NewPostState extends State<NewPost> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: 100,
+                  width: 120,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,14 +52,32 @@ class _NewPostState extends State<NewPost> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Text(
-                      "Malaysia",
+                    DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isDense: true,
+                      // itemHeight: 48,
+                      value: payIn,
+                      icon: Icon(Icons.arrow_drop_down),
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 19,
                         fontWeight: FontWeight.w700,
                       ),
+                      items: <String>['Sudan', 'Malaysia', 'Yemen']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String newPayInLocation) {
+                        setState(() {
+                          payIn = newPayInLocation;
+                        });
+                      },
                     ),
+                  ),
+                
                   ],
                   ),
                 ),
@@ -70,7 +90,7 @@ class _NewPostState extends State<NewPost> {
                   ),
                 ),
                 Container(
-                  width: 100,
+                  width: 120,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -82,14 +102,32 @@ class _NewPostState extends State<NewPost> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Text(
-                      "Sudan",
+                    DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isDense: true,
+                      // itemHeight: 48,
+                      value: collectFrom,
+                      icon: Icon(Icons.arrow_drop_down),
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 19,
                         fontWeight: FontWeight.w700,
                       ),
+                      items: <String>['Sudan', 'Malaysia', 'Yemen']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String newColLocation) {
+                        setState(() {
+                          collectFrom = newColLocation;
+                        });
+                      },
                     ),
+                  ),
+                  
                   ],
                   ),
                 ),
