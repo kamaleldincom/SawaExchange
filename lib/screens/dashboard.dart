@@ -21,16 +21,6 @@ class _DashboardState extends State<Dashboard> {
             "assets/Logo.png", fit: BoxFit.contain,
           )
         ),
-        // Center(
-        //   child: Text(
-            
-        //     "Sawa Exchange",
-        //     style: TextStyle(
-        //       color: Color(0xFF707070),
-        //     ),
-        //   ),
-
-        // ),
 
         leading: Container(
           padding: EdgeInsets.all(8),
